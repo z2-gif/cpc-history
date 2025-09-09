@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>中国共产党历史时期任务与主要矛盾</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: 'Microsoft YaHei', sans-serif; background: #fafafa; margin: 0; color: #333; }
+    header { background: linear-gradient(90deg, #a80000, #d32f2f); color: white; padding: 50px 20px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); position: relative; }
+    header h1 { margin: 0; font-size: 32px; letter-spacing: 1.5px; }
+
+    .timeline { position: relative; max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+    .timeline::after { content: ''; position: absolute; width: 4px; background: #d32f2f; top: 0; bottom: 0; left: 50%; margin-left: -2px; }
+
+    .card { padding: 30px; background: white; position: relative; border-radius: 20px; width: 42%; box-shadow: 0 8px 16px rgba(0,0,0,0.08); margin: 50px 0; transition: all .3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
+    .left { left: 0; }
+    .right { left: 58%; }
+    .card::after { content: ''; position: absolute; width: 22px; height: 22px; top: 30px; right: -11px; background: #fff; border: 5px solid #d32f2f; border-radius: 50%; z-index: 1; }
+    .right::after { left: -11px; }
+
+    h2 { margin-top: 0; font-size: 22px; color: #a80000; }
+    p { line-height: 1.8; font-size: 15px; }
+    ul { padding-left: 22px; line-height: 1.8; font-size: 15px; }
+    li { margin-bottom: 8px; }
+    a.source-link { font-size: 13px; color: #1565c0; text-decoration: none; margin-left: 6px; }
+    a.source-link:hover { text-decoration: underline; }
+
+    .data-section { max-width: 1200px; margin: 80px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.08); }
+    .data-section h2 { font-size: 24px; margin-bottom: 30px; color: #a80000; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+    .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .chart-card { background: #fdfdfd; padding: 20px; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
+    canvas { margin: 20px 0; }
+
+    .download-btn { background: #a80000; color: white; padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; margin-top: 10px; transition: background .2s; font-size: 14px; }
+    .download-btn:hover { background: #d32f2f; }
+
+    footer { text-align: center; padding: 30px; color: #666; font-size: 14px; background: #f0f0f0; margin-top: 60px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>中国共产党各历史时期主要任务与主要矛盾</h1>
+  </header>
+  <div class="timeline">
+    <div class="card left">
+      <h2>新民主主义革命时期（1921–1949）</h2>
+      <p><strong>主要任务：</strong>反帝反封建反官僚资本，争取民族独立与人民解放。</p>
+      <p><strong>主要矛盾：</strong>帝国主义、封建主义与人民大众之间的矛盾。</p>
+      <ul>
+        <li>关键事件：遵义会议（1935）、中共七大（1945）</li>
+        <li>代表性文件：<br><em>《中国共产党章程（七大）》</em>明确提出：<br>“中国共产党是中国工人阶级的先锋队，是全中国人民的领导核心。”<a class="source-link" href="http://cpc.people.com.cn/GB/64162/64168/64563/index.html" target="_blank">原文出处</a></li>
+      </ul>
+    </div>
+
+    <div class="card right">
+      <h2>社会主义革命与建设时期（1949–1978）</h2>
+      <p><strong>主要任务：</strong>完成社会主义改造，确立社会主义基本制度，推进工业化建设。</p>
+      <p><strong>主要矛盾：</strong>人民对建立先进工业国、发展经济文化的需要同落后的现实之间的矛盾。</p>
+      <ul>
+        <li>关键事件：新中国成立（1949）、中共八大（1956）</li>
+        <li>代表性文件：<br><em>中共八大报告</em>指出：<br>“我国国内的主要矛盾，已经是人民对于建立先进的工业国的要求同落后的农业国现实之间的矛盾。”<a class="source-link" href="http://cpc.people.com.cn/GB/64162/64168/64566/65448/index.html" target="_blank">原文出处</a></li>
+      </ul>
+    </div>
+
+    <div class="card left">
+      <h2>改革开放与社会主义现代化建设新时期（1978–2012）</h2>
+      <p><strong>主要任务：</strong>推进改革开放，解放和发展生产力，逐步实现现代化。</p>
+      <p><strong>主要矛盾：</strong>人民日益增长的物质文化需要与落后生产之间的矛盾。</p>
+      <ul>
+        <li>关键事件：十一届三中全会（1978）、十四大（1992）</li>
+        <li>代表性文件：<br><em>十一届三中全会公报</em>强调：<br>“把全党工作重点转移到社会主义现代化建设上来，实行改革开放。”<a class="source-link" href="http://cpc.people.com.cn/GB/64162/64168/64568/65444/index.html" target="_blank">原文出处</a></li>
+      </ul>
+    </div>
+
+    <div class="card right">
+      <h2>新时代（2012–至今）</h2>
+      <p><strong>主要任务：</strong>实现全面小康，推进国家治理现代化，迈向中华民族伟大复兴。</p>
+      <p><strong>主要矛盾：</strong>人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。</p>
+      <ul>
+        <li>关键事件：党的十九大（2017）、二十大（2022）</li>
+        <li>代表性文件：<br><em>十九大报告</em>指出：<br>“我国社会主要矛盾已经转化为人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。”<a class="source-link" href="http://www.xinhuanet.com/politics/19cpcnc/2017-10/27/c_1121878036.htm" target="_blank">原文出处</a></li>
+        <li><em>十九大报告</em>提出：<br>“伟大斗争，伟大工程，伟大事业，伟大梦想，紧密联系、相互贯通、相互作用，其中起决定性作用的是党的建设新的伟大工程。”<a class="source-link" href="http://www.xinhuanet.com/politics/19cpcnc/2017-10/27/c_1121878036.htm" target="_blank">原文出处</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="data-section">
+    <h2>数据可视化</h2>
+    <div class="charts">
+      <div class="chart-card">
+        <canvas id="gdpChart"></canvas>
+        <button class="download-btn" onclick="downloadCSV('gdp')">下载GDP数据 CSV</button>
+      </div>
+      <div class="chart-card">
+        <canvas id="urbanChart"></canvas>
+        <button class="download-btn" onclick="downloadCSV('urban')">下载城镇化数据 CSV</button>
+      </div>
+      <div class="chart-card">
+        <canvas id="populationChart"></canvas>
+        <button class="download-btn" onclick="downloadCSV('population')">下载人口数据 CSV</button>
+      </div>
+      <div class="chart-card">
+        <canvas id="industryChart"></canvas>
+        <button class="download-btn" onclick="downloadCSV('industry')">下载产业结构数据 CSV</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 中国共产党历史可视化汇报页面
+  </footer>
+
+  <script>
+    const labels = ["1921-1949", "1949-1978", "1978-2012", "2012-至今"];
+    const gdpData = [100, 300, 2000, 12000];
+    const urbanData = [10, 18, 45, 65];
+    const populationData = [45000, 70000, 110000, 140000];
+    const industryData = [
+      {a: 70, b: 20, c: 10},
+      {a: 40, b: 40, c: 20},
+      {a: 20, b: 45, c: 35},
+      {a: 8, b: 40, c: 52}
+    ];
+
+    new Chart(document.getElementById('gdpChart'), {
+      type: 'line',
+      data: { labels, datasets: [{ label: '人均GDP (美元, 示例)', data: gdpData, fill: false, borderColor: '#d32f2f', tension: 0.3 }] },
+      options: { responsive: true, plugins: { legend: { display: true, position: 'bottom' } } }
+    });
+
+    new Chart(document.getElementById('urbanChart'), {
+      type: 'line',
+      data: { labels, datasets: [{ label: '城镇化率 (%) 示例', data: urbanData, fill: false, borderColor: '#1565c0', tension: 0.3 }] },
+      options: { responsive: true, plugins: { legend: { display: true, position: 'bottom' } } }
+    });
+
+    new Chart(document.getElementById('populationChart'), {
+      type: 'line',
+      data: { labels, datasets: [{ label: '总人口 (万人, 示例)', data: populationData, fill: true, borderColor: '#2e7d32', backgroundColor: 'rgba(46,125,50,0.2)', tension: 0.3 }] },
+      options: { responsive: true, plugins: { legend: { display: true, position: 'bottom' } } }
+    });
+
+    new Chart(document.getElementById('industryChart'), {
+      type: 'bar',
+      data: { labels, datasets: [
+        { label: '第一产业 (%)', data: industryData.map(d=>d.a), backgroundColor: '#ffb300' },
+        { label: '第二产业 (%)', data: industryData.map(d=>d.b), backgroundColor: '#d32f2f' },
+        { label: '第三产业 (%)', data: industryData.map(d=>d.c), backgroundColor: '#1565c0' }
+      ]},
+      options: { responsive: true, scales: { x: { stacked: true }, y: { stacked: true, max: 100 } }, plugins: { legend: { position: 'bottom' } } }
+    });
+
+    function downloadCSV(type) {
+      let rows = [];
+      if (type === 'gdp') rows = labels.map((l,i)=>[l,gdpData[i]]);
+      else if (type === 'urban') rows = labels.map((l,i)=>[l,urbanData[i]]);
+      else if (type === 'population') rows = labels.map((l,i)=>[l,populationData[i]]);
+      else if (type === 'industry') rows = labels.map((l,i)=>[l,industryData[i].a + '/' + industryData[i].b + '/' + industryData[i].c]);
+      let csv = '时期,数值\n' + rows.map(r=>r.join(',')).join('\n');
+      let blob = new Blob([csv], {type: 'text/csv'});
+      let url = window.URL.createObjectURL(blob);
+      let a = document.createElement('a');
+      a.setAttribute('href', url);
+      a.setAttribute('download', type+".csv");
+      a.click();
+    }
+  </script>
+</body>
+</html>
